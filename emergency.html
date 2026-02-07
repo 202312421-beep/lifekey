@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الطوارئ - LIFEKEY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <span>🚑 شاشة الطوارئ</span>
+        <span class="badge">Doctor View</span>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">الرئيسية</a>
+        <a href="profile.html">الملف الصحي</a>
+        <a href="nfc_card.html">البطاقة</a>
+        <a href="emergency.html">الطوارئ</a>
+        <a href="about.html">About / SDGs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>وصول سريع للمعلومات الحرجة</h1>
+      <p>بدون إنترنت — بدون بيانات شخصية — فقط ما يلزم للطوارئ.</p>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="loadEmergencyFromStorage()">Scan (من الجهاز)</button>
+        <button class="btn btn-ghost" onclick="location.href='nfc_card.html'">اذهب للبطاقة</button>
+        <button class="btn btn-ghost" onclick="resetCard()">مسح البيانات (Demo)</button>
+      </div>
+
+      <div class="hr"></div>
+
+      <h2>أو لصق Card Code (محاكاة مسح NFC)</h2>
+      <textarea id="scanCode" rows="3" placeholder="الصقي Card Code هنا..."></textarea>
+      <div class="actions">
+        <button class="btn btn-ok" onclick="loadEmergencyFromCode()">Decode & Show</button>
+      </div>
+
+      <div class="hr"></div>
+
+      <div id="alertBox" class="alert" style="display:none;"></div>
+
+      <div class="card" style="margin-top:12px;">
+        <p><strong>Emergency ID:</strong> <span class="mono" id="emergencyIdR">-</span></p>
+        <p><strong>Blood Type:</strong> <span id="bloodR">-</span></p>
+        <p><strong>Critical Allergy:</strong> <span id="allergyR" style="color:var(--danger); font-weight:900;">-</span></p>
+        <p><strong>Chronic Condition:</strong> <span id="conditionR">-</span></p>
+        <p class="footerNote">AI هنا Rule-based Alert فقط (بدون تشخيص).</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>إنشاء الملف الصحي - LIFEKEY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <span>🔑 LIFEKEY</span>
+        <span class="badge">Health Profile</span>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">الرئيسية</a>
+        <a href="profile.html">الملف الصحي</a>
+        <a href="nfc_card.html">البطاقة</a>
+        <a href="emergency.html">الطوارئ</a>
+        <a href="about.html">About / SDGs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>إنشاء / تعديل الملف الصحي</h1>
+      <p>أدخلي فقط المعلومات الحرجة للطوارئ. لا اسم، لا رقم وطني، ولا أي بيانات شخصية.</p>
+
+      <div class="grid2">
+        <div>
+          <label>فصيلة الدم</label>
+          <select id="blood">
+            <option value="">-- اختاري فصيلة الدم --</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+          <p class="small">معلومة أساسية للطبيب وقت الطوارئ.</p>
+        </div>
+
+        <div>
+          <label>حساسية حرجة (إن وجدت)</label>
+          <input id="allergy" placeholder="مثال: Penicillin" />
+          <p class="small">أي حساسية قد تسبب خطرًا مباشرًا.</p>
+        </div>
+
+        <div>
+          <label>مرض مزمن (إن وجد)</label>
+          <input id="condition" placeholder="مثال: Diabetes" />
+          <p class="small">لأخذ الاحتياطات بسرعة.</p>
+        </div>
+
+        <div>
+          <label>ملاحظة</label>
+          <input disabled value="سيتم توليد Emergency ID تلقائيًا عند الحفظ" />
+          <p class="small">Emergency ID = مُعرّف للطوارئ بدون أي بيانات شخصية.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="saveProfile()">حفظ وإنشاء البطاقة</button>
+        <button class="btn btn-ghost" onclick="previewProfile()">معاينة</button>
+        <button class="btn btn-ghost" onclick="location.href='index.html'">رجوع</button>
+      </div>
+
+      <div id="previewBox" class="card" style="display:none; margin-top:14px;">
+        <h2>Preview (قبل الحفظ)</h2>
+        <p><strong>Blood:</strong> <span id="previewBlood">-</span></p>
+        <p><strong>Allergy:</strong> <span id="previewAllergy">-</span></p>
+        <p><strong>Condition:</strong> <span id="previewCondition">-</span></p>
+      </div>
+
+     
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

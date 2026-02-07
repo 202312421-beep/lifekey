@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بطاقة LIFEKEY</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="loadCard()">
+
+  <div class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <span>💳 بطاقة LIFEKEY</span>
+        <span class="badge">NFC  Simulation</span>
+      </div>
+      <div class="navlinks">
+        <a href="index.html">الرئيسية</a>
+        <a href="profile.html">الملف الصحي</a>
+        <a href="nfc_card.html">البطاقة</a>
+        <a href="emergency.html">الطوارئ</a>
+        <a href="about.html">About / SDGs</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1>بطاقة الطوارئ</h1>
+      <p>اعرضي هذه البطاقة في حالة الطوارئ ليتمكن الطبيب من قراءة المعلومات بسرعة.</p>
+
+      <div class="hr"></div>
+
+      <div class="grid2">
+        <div class="center">
+          <canvas id="qrCanvas" style="border-radius:14px; max-width:100%;"></canvas>
+         
+        </div>
+
+        <div>
+          <h2>Emergency ID</h2>
+          <p class="mono codeBox" id="emergencyIdShow">-</p>
+
+          <h2>Card Code</h2>
+          <div class="codeBox mono" id="cardCode">Loading...</div>
+          <p class="small" id="cardMeta"></p>
+
+          <div class="actions">
+            <button class="btn btn-primary" onclick="saveCardAsImage()">حفظ كصورة</button>
+            <button class="btn btn-ghost" onclick="printCard()">طباعة</button>
+            <button class="btn btn-ghost" onclick="goToEmergency()">فتح شاشة الطوارئ</button>
+          </div>
+
+          <p class="footerNote">إذا بدك “تمثيل Scan”، انسخي Card Code والصقيه في صفحة الطوارئ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
